@@ -36,15 +36,17 @@
     <button onclick="go()">确认</button>
   </div>
   <script>
-    function go() {
-      const val = document.getElementById('inputBox').value.trim();
-      if (val === '路菲尔') {
-        location.href = 'lufel.html';
-      } else if (val === '朝仓悠月' || val === '悠月') {
-        location.href = 'asakura.html';
-      } else {
-        location.href = 'other.html';
-      }
+ function go() {
+  const val = document.getElementById('inputBox').value;
+  const v = val.replace(/\s/g, ''); // 去掉所有空格
+  if (v === '路菲尔') {
+    location.href = 'lufel.html';
+  } else if (v === '朝仓悠月' || v === '悠月') {
+    location.href = 'asakura.html';
+  } else {
+    location.href = 'other.html';
+  }
+}
     }
   </script>
 </body>
