@@ -20,8 +20,6 @@
       padding: 10px;
       font-size: 16px;
       width: 200px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
     }
     button {
       padding: 10px 16px;
@@ -32,13 +30,12 @@
     button:hover {
       opacity: 0.8;
     }
-
   </style>
 </head>
 <body>
   <div class="container">
     <h2>你是谁？</h2>
-    <input type="text" id="inputBox" onkeydown="if(event.key==='Enter') go()" placeholder="请输入你的名字">
+    <input type="text" id="inputBox" onkeydown="if(event.key==='Enter') go()">
     <button onclick="go()">确认</button>
   </div>
 <script>
@@ -50,7 +47,6 @@ function go() {
   const asakuraList = ['朝仓悠月', '悠月'];
   const yuzukiList = ['朝仓夕月', '夕月'];
   
-  // 使用小写文件名
   if (lufelList.includes(v)) {
     location.href = 'lufel.html';
   } else if (asakuraList.includes(v)) {
@@ -61,11 +57,6 @@ function go() {
     location.href = 'other.html';
   }
 }
-
-// 页面加载完成后的测试
-window.onload = function() {
-  console.log('页面已加载，JavaScript正常工作');
-};
 </script>
 </body>
 </html>
