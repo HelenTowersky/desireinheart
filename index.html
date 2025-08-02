@@ -39,11 +39,16 @@
  function go() {
   const val = document.getElementById('inputBox').value;
   const v = val.replace(/\s/g, ''); // 去掉所有空格
-  if (v === '路菲尔') {
+  const lufelList = ['路菲尔', 'Lufel', 'ルフェル'];
+  const asakuraList = ['朝仓悠月', '悠月'];
+  const yuzukiList = ['朝仓夕月', '夕月'];
+  if (lufelList.includes(v)) {
     location.href = 'lufel.html';
-  } else if (v === '朝仓悠月' || v === '悠月') {
+  } else if (asakuraList.includes(v)) {
     location.href = 'asakura.html';
-  } else {
+  } else if  (yuzukiList.includes(v)) {
+    location.href = 'yuzuki.html';  
+  else {
     location.href = 'other.html';
   }
 }
