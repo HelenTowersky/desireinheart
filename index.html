@@ -12,6 +12,7 @@
       font-family: sans-serif;
       color: #ebebeb;
       background-color: #464646;
+      margin: 0;
     }
     .container {
       text-align: center;
@@ -26,6 +27,10 @@
       font-size: 16px;
       margin-left: 10px;
       cursor: pointer;
+      background-color: #ffffff;
+      color: #000000;
+      border: none;
+      border-radius: 4px;
     }
     button:hover {
       opacity: 0.8;
@@ -38,25 +43,25 @@
     <input type="text" id="inputBox" onkeydown="if(event.key==='Enter') go()">
     <button onclick="go()">确认</button>
   </div>
-<script>
-function go() {
-  const val = document.getElementById('inputBox').value;
-  const v = val.replace(/\s/g, ''); // 去掉所有空格
-  
-  const lufelList = ['路菲尔', 'Lufel', 'ルフェル'];
-  const asakuraList = ['朝仓悠月', '悠月'];
-  const yuzukiList = ['朝仓夕月', '夕月'];
-  
-  if (lufelList.includes(v)) {
-    location.href = 'lufel.html';
-  } else if (asakuraList.includes(v)) {
-    location.href = 'asakura.html';
-  } else if (yuzukiList.includes(v)) {
-    location.href = 'yuzuki.html';  
-  } else {
-    location.href = 'other.html';
-  }
-}
-</script>
+  <script>
+    function go() {
+      const val = document.getElementById('inputBox').value;
+      const v = val.replace(/\s/g, '');
+
+      const lufelList = ['路菲尔', 'Lufel', 'ルフェル'];
+      const asakuraList = ['朝仓悠月', '悠月'];
+      const yuzukiList = ['朝仓夕月', '夕月'];
+
+      if (lufelList.includes(v)) {
+        location.href = 'lufel.html';
+      } else if (asakuraList.includes(v)) {
+        location.href = 'asakura.html';
+      } else if (yuzukiList.includes(v)) {
+        location.href = 'yuzuki.html';
+      } else {
+        location.href = 'other.html';
+      }
+    }
+  </script>
 </body>
 </html>
