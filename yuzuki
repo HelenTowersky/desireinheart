@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>我是……朝仓夕月？</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: sans-serif;
+      color: #ebebeb;
+      background-color: #161616;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>这不是你现在可以知道的名字。</h1>
+    <p>如果你能成功达到正确的未来，你会有机会得知这个名字的。</p>
+  </div>
+</body>
+</html>
