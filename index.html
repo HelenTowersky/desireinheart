@@ -36,11 +36,7 @@
     button:hover {
       background-color: #0056b3;
     }
-    .debug {
-      margin-top: 20px;
-      font-size: 12px;
-      color: #ccc;
-    }
+
   </style>
 </head>
 <body>
@@ -48,16 +44,11 @@
     <h2>你是谁？</h2>
     <input type="text" id="inputBox" onkeydown="if(event.key==='Enter') go()" placeholder="请输入你的名字">
     <button onclick="go()">确认</button>
-    <div class="debug" id="debugInfo"></div>
   </div>
 <script>
 function go() {
   const val = document.getElementById('inputBox').value;
   const v = val.replace(/\s/g, ''); // 去掉所有空格
-  const debugElement = document.getElementById('debugInfo');
-  
-  // 调试信息
-  debugElement.innerHTML = `输入值: "${val}" -> 处理后: "${v}"`;
   
   const lufelList = ['路菲尔', 'Lufel', 'ルフェル'];
   const asakuraList = ['朝仓悠月', '悠月'];
