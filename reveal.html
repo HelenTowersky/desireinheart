@@ -25,30 +25,27 @@
       font-family: 'Times New Roman', 'SimSun', '宋体', serif;
     }
 
-    /* TV干扰效果 - 字体伪动画变化 */
+    /* TV干扰效果 - 确保文字存在、闪烁并变化 */
     #glitch-char {
-      position: relative;
       display: inline-block;
-      color: transparent;
+      width: 2em;
+      text-align: left;
+      animation: flicker 6s infinite steps(1, end);
+    }
+    @keyframes flicker {
+      0%, 15%   { content: "俺"; }
+      17%       { content: "俺"; }
+      19%       { content: "ワシ"; }
+      21%       { content: "ワシ"; }
+      23%, 40%  { content: "ワシ"; }
+      42%       { content: "ワシ"; }
+      44%       { content: "俺"; }
+      46%       { content: "俺"; }
+      48%, 100% { content: "俺"; }
     }
     #glitch-char::before {
       content: "俺";
-      animation: tv-glitch 6s infinite;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 2em;
-    }
-    @keyframes tv-glitch {
-      0%, 15% { content: "俺"; filter: invert(0); text-shadow: none; }
-      17%     { content: "俺"; filter: invert(1); text-shadow: 2px 0 #fff, -2px 0 #000; }
-      19%     { content: "ワシ"; filter: invert(0); text-shadow: -1px 0 #fff, 1px 0 #000; }
-      21%     { content: "ワシ"; filter: invert(1); text-shadow: 3px 0 #fff, -3px 0 #000; }
-      23%, 40%{ content: "ワシ"; filter: invert(0); text-shadow: none; }
-      42%     { content: "ワシ"; filter: invert(1); text-shadow: -2px 0 #fff, 2px 0 #000; }
-      44%     { content: "俺"; filter: invert(0); text-shadow: 1px 0 #fff, -1px 0 #000; }
-      46%     { content: "俺"; filter: invert(1); text-shadow: -3px 0 #fff, 3px 0 #000; }
-      48%, 100% { content: "俺"; filter: invert(0); text-shadow: none; }
+      animation: flicker 6s infinite steps(1, end);
     }
 
     .container {
@@ -104,7 +101,6 @@
       font-family: 'Times New Roman', 'SimSun', '宋体', serif;
     }
 
-    /* 响应式优化 */
     @media (max-width: 768px) {
       h1 {
         font-size: 2em;
@@ -118,7 +114,7 @@
 
 <body>
   <header>
-    <h1><span id="glitch-char">俺</span>の東京ルーピングライフ</h1>
+    <h1><span id="glitch-char"></span>の東京ルーピングライフ</h1>
   </header>
 
   <div class="container">
