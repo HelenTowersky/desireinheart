@@ -1,1 +1,208 @@
-
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>谜题解析：你是谁</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', 'SimSun', '宋体', serif;
+      background-image: url('blackbackground.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: #ebebeb;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background-image: url('whoareyou.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #ffffff;
+      padding: 60px 0;
+      text-align: center;
+      border-bottom: 4px solid #6b0000;
+      position: relative;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 30px 10px rgba(128, 128, 128, 0.3);
+    }
+    h2 {
+      color: #c88888;
+      margin-top: 40px;
+      font-family: serif;
+      font-weight: normal;
+      letter-spacing: 1px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      box-shadow: 0 0 15px 3px rgba(100, 100, 100, 0.2);
+    }
+    th, td {
+      border: 1px solid #666;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: rgba(47, 47, 79, 0.6);
+      font-family: serif;
+    }
+    td:first-child {
+      font-weight: normal;
+      background-color: rgba(60, 60, 60, 0.4);
+      font-style: italic;
+    }
+    td {
+      background-color: rgba(40, 40, 40, 0.3);
+    }
+    a {
+      color: #97c0f0;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    blockquote {
+      border-left: 4px solid #c88888;
+      padding: 20px 25px;
+      margin: 25px 0;
+      font-style: italic;
+      background-color: rgba(50, 50, 50, 0.3);
+      font-family: 'Georgia', serif;
+      font-size: 1.1em;
+      line-height: 1.8;
+      box-shadow: 0 0 20px 5px rgba(128, 128, 128, 0.2);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #aaa;
+      border-top: 1px solid #555;
+      margin-top: 40px;
+      font-family: serif;
+      box-shadow: 0 -10px 20px 0 rgba(128, 128, 128, 0.15);
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 15px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      table {
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>谜题解析：你是谁</h1>
+  </header>
+  <div class="container">
+    <h2>一、谜题概述</h2>
+    <p>这篇同人文隐藏了一个身份错位的谜题。文章通过混淆主角身份、隐藏的摩斯电码和插图中的二维码，引导读者识破"主角并非朝仓悠月，而是路菲尔"的真相。</p>
+    
+    <h2>二、文中暗示与细节分析</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>文中句子</th>
+          <th>含义与身份暗示</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>"他熟练地抽出短刀，仿佛这柄刀是他身体的一部分。"</td>
+          <td>悠月惯用枪械，短刀是路菲尔的标志性武器。</td>
+        </tr>
+        <tr>
+          <td>"他对火焰的反应几乎是本能的恐惧。"</td>
+          <td>火焰事件是路菲尔过去的重要创伤。</td>
+        </tr>
+        <tr>
+          <td>"他望向镜中的自己，却一言不发。"</td>
+          <td>镜子与身份重构的主题紧密相关，属于路菲尔叙事符号。</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h2>三、摩斯电码与拉丁语</h2>
+    <p>文中使用摩斯电码作为伪装分隔符，暗藏以下拉丁文句：</p>
+    <table>
+      <thead>
+        <tr>
+          <th>摩斯电码</th>
+          <th>翻译</th>
+          <th>暗示意义</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>-- . -- . -. - --- / -- --- .-. ..</td>
+          <td><i>Memento mori</i></td>
+          <td>死亡的记忆，构建压抑悬疑氛围。</td>
+        </tr>
+        <tr>
+          <td>... .. -.-. / - .-. .- -. ... .. -</td>
+          <td><i>Sic transit</i></td>
+          <td>"万物流转"，暗示身份变化。</td>
+        </tr>
+        <tr>
+          <td>-. --- ... / ..- -. ..- -- / ... ..- -- ..- ...</td>
+          <td><i>Nos unum sumus</i></td>
+          <td>我们是同一个人，强调错认主题。</td>
+        </tr>
+        <tr>
+          <td>..-. .. .- - / ...- --- .-.. ..- -. - .- ... / - ..- .-</td>
+          <td><i>Fiat voluntas tua</i></td>
+          <td>愿你的意志实现，引出玩家参与感。</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h2>四、插图与二维码提示</h2>
+    <p>文末插图中的水印中包含一个二维码，扫码后会跳转至问答页面。</p>
+    <p>页面问："你是谁？"输入错误（如"悠月"）会进入错误页面，而正确输入"路菲尔"则会解锁谜题答案页面。</p>
+    
+    <h2>五、设计者的话</h2>
+    <p>这个谜题的目的是将读者带入角色的身份迷失与认知混乱之中。通过文风、台词、视觉符号的错位，模拟主角自身的身份危机，并邀请读者共同参与"找回真正的我"的旅程。</p>
+    
+    <h2>六、恭喜你</h2>
+    <p>你已经找到了正确的答案。如果你走到了这里，请记住：</p>
+    <blockquote>"不是所有真相都会大声说出来，它们有时只是悄悄躲在'我是谁'的缝隙之间。"</blockquote>
+    <p><a href="solution.html">进入完整结局与解密页面 →</a></p>
+  </div>
+  
+  <footer>
+    &copy; 2025 路菲尔的回声 ｜ ARG谜题设计 by Kurusu Akira
+  </footer>
+</body>
+</html>
