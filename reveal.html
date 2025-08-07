@@ -24,97 +24,6 @@
       margin: 0;
       font-family: 'Times New Roman', 'SimSun', '宋体', serif;
     }
-
-    /* 更具TV干扰感的效果 */
-    #glitch-char {
-      position: relative;
-      display: inline-block;
-      width: 2em;
-      text-align: left;
-      color: #fff;
-      animation: flickerText 2s infinite;
-    }
-
-    #glitch-char::before,
-    #glitch-char::after {
-      content: attr(data-char);
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      overflow: hidden;
-      color: #fff;
-    }
-
-    #glitch-char::before {
-      animation: glitchBefore 2s infinite;
-      color: #f0f;
-      clip-path: inset(0 0 60% 0);
-    }
-
-    #glitch-char::after {
-      animation: glitchAfter 2s infinite;
-      color: #0ff;
-      clip-path: inset(40% 0 0 0);
-    }
-
-    @keyframes flickerText {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        transform: none;
-        opacity: 1;
-      }
-      20%, 24%, 55% {
-        transform: translateX(-1px);
-        opacity: 0.8;
-      }
-      22%, 26%, 57% {
-        transform: translateX(1px);
-        opacity: 0.6;
-      }
-    }
-
-    @keyframes glitchBefore {
-      0% {
-        transform: translate(-1px, -1px);
-      }
-      20% {
-        transform: translate(-3px, 1px);
-      }
-      40% {
-        transform: translate(1px, -2px);
-      }
-      60% {
-        transform: translate(3px, 1px);
-      }
-      80% {
-        transform: translate(-1px, 2px);
-      }
-      100% {
-        transform: translate(0, 0);
-      }
-    }
-
-    @keyframes glitchAfter {
-      0% {
-        transform: translate(1px, 1px);
-      }
-      20% {
-        transform: translate(3px, -1px);
-      }
-      40% {
-        transform: translate(-1px, 2px);
-      }
-      60% {
-        transform: translate(-3px, -1px);
-      }
-      80% {
-        transform: translate(1px, -2px);
-      }
-      100% {
-        transform: translate(0, 0);
-      }
-    }
-
     .container {
       max-width: 800px;
       margin: 40px auto;
@@ -167,8 +76,12 @@
       margin-top: 40px;
       font-family: 'Times New Roman', 'SimSun', '宋体', serif;
     }
-
     @media (max-width: 768px) {
+    p {
+      font-family: 'Times New Roman', 'SimSun', '宋体', serif;
+    }
+        padding: 0 15px;
+      }
       h1 {
         font-size: 2em;
       }
@@ -178,16 +91,16 @@
     }
   </style>
 </head>
-
 <body>
   <header>
-    <h1><span id="glitch-char" data-char="ワシ">ワシ</span>の東京ルーピングライフ</h1>
+    <h1>
+      <span id="glitch-char">俺</span>の東京ルーピングライフ
+    </h1>
   </header>
-
   <div class="container">
     <h2>一、谜题概述</h2>
-    <p>这篇同人文隐藏了一个身份错位的谜题。文章通过混淆主角身份、隐藏的摩斯电码和插图中的二维码，引导读者识破“主角并非朝仓悠月，而是路菲尔”的真相。</p>
-
+    <p>这篇同人文隐藏了一个身份错位的谜题。文章通过混淆主角身份、隐藏的摩斯电码和插图中的二维码，引导读者识破"主角并非朝仓悠月，而是路菲尔"的真相。</p>
+    
     <h2>二、文中暗示与细节分析</h2>
     <table>
       <thead>
@@ -198,20 +111,20 @@
       </thead>
       <tbody>
         <tr>
-          <td>他熟练地抽出短刀，仿佛这柄刀是他身体的一部分。</td>
+          <td>"他熟练地抽出短刀，仿佛这柄刀是他身体的一部分。"</td>
           <td>悠月惯用枪械，短刀是路菲尔的标志性武器。</td>
         </tr>
         <tr>
-          <td>他对火焰的反应几乎是本能的恐惧。</td>
+          <td>"他对火焰的反应几乎是本能的恐惧。"</td>
           <td>火焰事件是路菲尔过去的重要创伤。</td>
         </tr>
         <tr>
-          <td>他望向镜中的自己，却一言不发。</td>
+          <td>"他望向镜中的自己，却一言不发。"</td>
           <td>镜子与身份重构的主题紧密相关，属于路菲尔叙事符号。</td>
         </tr>
       </tbody>
     </table>
-
+    
     <h2>三、摩斯电码与拉丁语</h2>
     <p>文中使用摩斯电码作为伪装分隔符，暗藏以下拉丁文句：</p>
     <table>
@@ -231,7 +144,7 @@
         <tr>
           <td>... .. -.-. / - .-. .- -. ... .. -</td>
           <td><i>Sic transit</i></td>
-          <td>“万物流转”，暗示身份变化。</td>
+          <td>"万物流转"，暗示身份变化。</td>
         </tr>
         <tr>
           <td>-. --- ... / ..- -. ..- -- / ... ..- -- ..- ...</td>
@@ -245,20 +158,20 @@
         </tr>
       </tbody>
     </table>
-
+    
     <h2>四、插图与二维码提示</h2>
     <p>文末插图中的水印中包含一个二维码，扫码后会跳转至问答页面。</p>
-    <p>页面问：“你是谁？”输入错误（如“悠月”）会进入错误页面，而正确输入“路菲尔”则会解锁谜题答案页面。</p>
-
+    <p>页面问："你是谁？"输入错误（如"悠月"）会进入错误页面，而正确输入"路菲尔"则会解锁谜题答案页面。</p>
+    
     <h2>五、设计者的话</h2>
-    <p>这个谜题的目的是将读者带入角色的身份迷失与认知混乱之中。通过文风、台词、视觉符号的错位，模拟主角自身的身份危机，并邀请读者共同参与“找回真正的我”的旅程。</p>
-
+    <p>这个谜题的目的是将读者带入角色的身份迷失与认知混乱之中。通过文风、台词、视觉符号的错位，模拟主角自身的身份危机，并邀请读者共同参与"找回真正的我"的旅程。</p>
+    
     <h2>六、恭喜你</h2>
     <p>你已经找到了正确的答案。如果你走到了这里，请记住：</p>
-    <blockquote>不是所有真相都会大声说出来，它们有时只是悄悄躲在“我是谁”的缝隙之间。</blockquote>
+    <blockquote>"不是所有真相都会大声说出来，它们有时只是悄悄躲在'我是谁'的缝隙之间。"</blockquote>
     <p><a href="solution.html">进入完整结局与解密页面 →</a></p>
   </div>
-
+  
   <footer>
     &copy; 2025 路菲尔的回声 ｜ ARG谜题设计 by Kurusu Akira
   </footer>
