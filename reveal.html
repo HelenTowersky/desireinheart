@@ -77,11 +77,10 @@
       font-family: 'Times New Roman', 'SimSun', '宋体', serif;
     }
     @media (max-width: 768px) {
-    p {
-      font-family: 'Times New Roman', 'SimSun', '宋体', serif;
-    }
-        padding: 0 15px;
+      p {
+        font-family: 'Times New Roman', 'SimSun', '宋体', serif;
       }
+      padding: 0 15px;
       h1 {
         font-size: 2em;
       }
@@ -89,6 +88,49 @@
         font-size: 0.9em;
       }
     }
+
+    /* 新增图片弹出样式 */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 3px solid #aaa;
+      box-shadow: 0 0 15px #000;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .overlay.show {
+      display: flex;
+    }
+
+    .overlay.show img {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .link-group {
+      margin-top: 30px;
+    }
+
+    .link-group a {
+      display: inline-block;
+      margin-right: 20px;
+      color: #97c0f0;
+    }
+
   </style>
 </head>
 <body>
@@ -170,10 +212,32 @@
     <p>你已经找到了正确的答案。如果你走到了这里，请记住：</p>
     <blockquote>"不是所有真相都会大声说出来，它们有时只是悄悄躲在'我是谁'的缝隙之间。"</blockquote>
     <p><a href="solution.html">进入完整结局与解密页面 →</a></p>
+
+    <div class="link-group">
+      <a href="javascript:void(0)" onclick="showCG()">查看结局CG</a>
+      <a href="#" target="_blank">回到开始</a>
+      <a href="https://space.bilibili.com/3546951073139438" target="_blank">等待故事开始</a>
+    </div>
   </div>
-  
+
+  <div class="overlay" id="cgOverlay" onclick="hideCG(event)">
+    <img src="end.jpg" alt="结局CG">
+  </div>
+
   <footer>
     &copy; 2025 路菲尔的回声 ｜ ARG谜题设计 by Kurusu Akira
   </footer>
+
+  <script>
+    function showCG() {
+      document.getElementById('cgOverlay').classList.add('show');
+    }
+
+    function hideCG(event) {
+      if (event.target.id === 'cgOverlay') {
+        document.getElementById('cgOverlay').classList.remove('show');
+      }
+    }
+  </script>
 </body>
 </html>
