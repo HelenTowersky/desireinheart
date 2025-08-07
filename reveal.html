@@ -25,27 +25,94 @@
       font-family: 'Times New Roman', 'SimSun', '宋体', serif;
     }
 
-    /* TV干扰效果 - 确保文字存在、闪烁并变化 */
+    /* 更具TV干扰感的效果 */
     #glitch-char {
+      position: relative;
       display: inline-block;
       width: 2em;
       text-align: left;
-      animation: flicker 6s infinite steps(1, end);
+      color: #fff;
+      animation: flickerText 2s infinite;
     }
-    @keyframes flicker {
-      0%, 15%   { content: "俺"; }
-      17%       { content: "俺"; }
-      19%       { content: "ワシ"; }
-      21%       { content: "ワシ"; }
-      23%, 40%  { content: "ワシ"; }
-      42%       { content: "ワシ"; }
-      44%       { content: "俺"; }
-      46%       { content: "俺"; }
-      48%, 100% { content: "俺"; }
+
+    #glitch-char::before,
+    #glitch-char::after {
+      content: attr(data-char);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      overflow: hidden;
+      color: #fff;
     }
+
     #glitch-char::before {
-      content: "俺";
-      animation: flicker 6s infinite steps(1, end);
+      animation: glitchBefore 2s infinite;
+      color: #f0f;
+      clip-path: inset(0 0 60% 0);
+    }
+
+    #glitch-char::after {
+      animation: glitchAfter 2s infinite;
+      color: #0ff;
+      clip-path: inset(40% 0 0 0);
+    }
+
+    @keyframes flickerText {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        transform: none;
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        transform: translateX(-1px);
+        opacity: 0.8;
+      }
+      22%, 26%, 57% {
+        transform: translateX(1px);
+        opacity: 0.6;
+      }
+    }
+
+    @keyframes glitchBefore {
+      0% {
+        transform: translate(-1px, -1px);
+      }
+      20% {
+        transform: translate(-3px, 1px);
+      }
+      40% {
+        transform: translate(1px, -2px);
+      }
+      60% {
+        transform: translate(3px, 1px);
+      }
+      80% {
+        transform: translate(-1px, 2px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    @keyframes glitchAfter {
+      0% {
+        transform: translate(1px, 1px);
+      }
+      20% {
+        transform: translate(3px, -1px);
+      }
+      40% {
+        transform: translate(-1px, 2px);
+      }
+      60% {
+        transform: translate(-3px, -1px);
+      }
+      80% {
+        transform: translate(1px, -2px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
     }
 
     .container {
@@ -114,7 +181,7 @@
 
 <body>
   <header>
-    <h1><span id="glitch-char"></span>の東京ルーピングライフ</h1>
+    <h1><span id="glitch-char" data-char="ワシ">ワシ</span>の東京ルーピングライフ</h1>
   </header>
 
   <div class="container">
