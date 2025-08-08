@@ -9,26 +9,38 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      font-family: sans-serif;
-      color: #161616;
+      font-family: 'SimSun', '宋体', serif;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      color: #ebebeb;
       background-color: #ebebeb;
+      background-image: url('lufel.jpg'); /* 添加背景图片 */
+      background-size: cover; /* 背景铺满 */
+      background-position: center; /* 居中显示 */
       margin: 0;
     }
     .container {
       text-align: center;
+      background-color: rgba(40, 40, 40, 0.6); /* 半透明灰色背景 */
+      padding: 30px 40px;
+      border-radius: 8px;
     }
-    input[type="text"] {
-      padding: 10px;
-      font-size: 16px;
-      width: 200px;
+    h1 {
+      font-family: 'SimSun', '宋体', serif;
+      color: #dcdcdc; /* 标题改为灰色 */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 标题阴影 */
     }
-    button {
-      padding: 10px 16px;
+    p {
+      font-family: 'SimSun', '宋体', serif;
+      color: #dcdcdc; /* 正文改为灰色 */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 正文阴影 */
+    }
+    a.recall-link {
+      color: #97c0f0; /* 保持与你原页面相同的蓝色 */
+      text-decoration: underline;
       font-size: 16px;
-      margin-top: 20px;
       cursor: pointer;
     }
-    button:hover {
+    a.recall-link:hover {
       opacity: 0.8;
     }
   </style>
@@ -38,7 +50,7 @@
     <h1>你找回了正确的记忆，你是路菲尔。</h1>
     <p>你还有需要完成的使命。</p>
     <p>你还有……需要救出的人。</p>
-    <button onclick="location.href='reveal.html'">查看谜题解析</button>
+    <a href="reveal.html" class="recall-link">查看本ARG解析</a>
   </div>
 </body>
 </html>
