@@ -5,139 +5,145 @@
   <title>谜题解析：你是谁</title>
   <style>
     body {
-      font-family: 'Times New Roman', 'SimSun', '宋体', serif;
-      background-color: #1f1f1f;
-      color: #ebebeb;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
+      font-family: 'Times New Roman', 'SimSun', '宋体', serif; /* 设置全局字体 */
+      background-color: #1f1f1f; /* 页面背景色 */
+      color: #ebebeb; /* 全局文字颜色 */
+      margin: 0; /* 取消页面外边距 */
+      padding: 0; /* 取消页面内边距 */
+      line-height: 1.6; /* 行高 */
     }
     header {
-      background-color: #2e2e2e;
-      color: #ffffff;
-      padding: 30px 0;
-      text-align: center;
-      border-bottom: 4px solid #6b0000;
+      /* 添加背景图片和大小（1920x530px） */
+      background: url('whoareyou.jpg') no-repeat center center; /* 设置标题背景图 */
+      background-size: cover; /* 背景图覆盖整个区域 */
+      color: #ffffff; /* 标题文字颜色 */
+      padding: 30px 0; /* 上下 30px 内边距 */
+      text-align: center; /* 居中对齐标题文字 */
+      /* 删除原来的红色横线，改成图片阴影 */
+      box-shadow: 4px 4px 8px rgba(0,0,0,0.7); /* 图片阴影效果 */
     }
     h1 {
-      font-size: 2.5em;
-      margin: 0;
-      font-family: 'Times New Roman', 'SimSun', '宋体', serif;
+      font-size: 2.5em; /* 标题字体大小 */
+      margin: 0; /* 去掉标题上下外边距 */
+      font-family: 'Times New Roman', 'SimSun', '宋体', serif; /* 标题字体 */
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* 标题文字阴影 */
     }
     .container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
+      max-width: 800px; /* 最大宽度 */
+      margin: 40px auto; /* 上下外边距 40px，水平居中 */
+      padding: 0 20px; /* 左右内边距 20px */
     }
     h2 {
-      color: #b80000;
-      margin-top: 40px;
+      color: #b80000; /* 二级标题颜色 */
+      margin-top: 40px; /* 上外边距 */
       font-family: 'Times New Roman', 'SimSun', '宋体', serif;
     }
     table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
+      width: 100%; /* 表格宽度占满 */
+      border-collapse: collapse; /* 去掉单元格之间的空隙 */
+      margin-top: 20px; /* 上外边距 */
     }
     th, td {
-      border: 1px solid #444;
-      padding: 10px;
-      text-align: left;
+      border: 1px solid #444; /* 单元格边框 */
+      padding: 10px; /* 单元格内边距 */
+      text-align: left; /* 左对齐 */
       font-family: 'Times New Roman', 'SimSun', '宋体', serif;
     }
     th {
-      background-color: #2f2f4f;
+      background-color: #2f2f4f; /* 表头背景色 */
     }
     td:first-child {
-      font-weight: bold;
-      background-color: #2a2a2a;
+      font-weight: bold; /* 第一列加粗 */
+      background-color: #2a2a2a; /* 第一列背景色 */
     }
     a {
-      color: #97c0f0;
-      text-decoration: none;
+      color: #97c0f0; /* 链接颜色 */
+      text-decoration: none; /* 去掉下划线 */
     }
     a:hover {
-      text-decoration: underline;
+      text-decoration: underline; /* 鼠标悬停下划线 */
     }
     blockquote {
-      border-left: 4px solid #b80000;
-      padding: 15px 20px;
-      margin: 20px 0;
-      font-style: italic;
-      background-color: #262626;
+      border-left: 4px solid #b80000; /* 左侧红色竖线 */
+      padding: 15px 20px; /* 内边距 */
+      margin: 20px 0; /* 上下外边距 */
+      font-style: italic; /* 斜体 */
+      background-color: #262626; /* 背景色 */
       font-family: 'Times New Roman', 'Georgia', serif;
     }
     footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #888;
-      border-top: 1px solid #333;
-      margin-top: 40px;
+      text-align: center; /* 居中 */
+      padding: 20px; /* 内边距 */
+      font-size: 0.9em; /* 字体大小 */
+      color: #888; /* 字体颜色 */
+      border-top: 1px solid #333; /* 顶部边框 */
+      margin-top: 40px; /* 上外边距 */
       font-family: 'Times New Roman', 'SimSun', '宋体', serif;
     }
     @media (max-width: 768px) {
       p {
         font-family: 'Times New Roman', 'SimSun', '宋体', serif;
       }
-      padding: 0 15px;
+      padding: 0 15px; /* 移动端左右内边距 */
       h1 {
-        font-size: 2em;
+        font-size: 2em; /* 移动端标题大小 */
       }
       table {
-        font-size: 0.9em;
+        font-size: 0.9em; /* 表格字体缩小 */
       }
     }
 
-    /* 新增图片弹出样式 */
+    /* 图片弹出遮罩层样式 */
     .overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
+      display: none; /* 默认隐藏 */
+      position: fixed; /* 固定定位 */
+      top: 0; left: 0; /* 左上角起始 */
+      width: 100vw; /* 占满屏幕宽 */
+      height: 100vh; /* 占满屏幕高 */
+      background-color: rgba(0, 0, 0, 0.7); /* 半透明黑色背景 */
+      justify-content: center; /* 水平居中 */
+      align-items: center; /* 垂直居中 */
+      z-index: 1000; /* 置顶 */
     }
 
     .overlay img {
-      max-width: 90%;
-      max-height: 90%;
-      box-shadow: 0 0 15px #000;
-      opacity: 0;
-      transform: scale(0.95);
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      max-width: 90%; /* 图片最大宽度 */
+      max-height: 90%; /* 图片最大高度 */
+      box-shadow: 0 0 15px #000; /* 图片阴影 */
+      opacity: 0; /* 初始透明 */
+      transform: scale(0.95); /* 初始缩放 */
+      transition: opacity 0.3s ease, transform 0.3s ease; /* 过渡动画 */
     }
 
     .overlay.show {
-      display: flex;
+      display: flex; /* 显示时启用 flex 居中 */
     }
 
     .overlay.show img {
-      opacity: 1;
-      transform: scale(1);
+      opacity: 1; /* 显示时完全不透明 */
+      transform: scale(1); /* 恢复正常大小 */
     }
 
     .link-group {
-      margin-top: 30px;
+      margin-top: 30px; /* 上外边距 */
     }
 
     .link-group a {
-      display: inline-block;
-      margin-right: 20px;
-      color: #97c0f0;
+      display: inline-block; /* 行内块 */
+      margin-right: 20px; /* 右外边距 */
+      color: #97c0f0; /* 链接颜色 */
     }
-
   </style>
 </head>
 <body>
+  <!-- 页面标题部分 -->
   <header>
     <h1>
       <span id="glitch-char">俺</span>の東京ルーピングライフ
     </h1>
   </header>
+
+  <!-- 主内容容器 -->
   <div class="container">
     <h2>一、谜题概述</h2>
     <p>这篇同人文隐藏了一个身份错位的谜题。文章通过混淆主角身份、隐藏的摩斯电码和插图中的二维码，引导读者识破"主角并非朝仓悠月，而是路菲尔"的真相。</p>
@@ -210,26 +216,35 @@
     <h2>六、恭喜你</h2>
     <p>你已经找到了正确的答案。如果你走到了这里，请记住：</p>
     <blockquote>"不是所有真相都会大声说出来，它们有时只是悄悄躲在'我是谁'的缝隙之间。"</blockquote>
+    
+    <!-- 按照新顺序排列链接 -->
     <div class="link-group">
-      <a href="javascript:void(0)" onclick="showCG()">查看结局CG</a>
+      <a href="javascript:void(0)" onclick="showOverlay('start.jpg')">查看导入CG</a>
+      <a href="javascript:void(0)" onclick="showOverlay('start alt.jpg')">查看导入CG -alt-</a>
+      <a href="javascript:void(0)" onclick="showOverlay('end.jpg')">查看结局CG</a>
       <a href="#" target="_blank">回到Lofter</a>
       <a href="https://space.bilibili.com/3546951073139438" target="_blank">等待故事开始</a>
     </div>
   </div>
 
+  <!-- 弹出图片容器 -->
   <div class="overlay" id="cgOverlay" onclick="hideCG(event)">
-    <img src="end.jpg" alt="结局CG">
+    <img src="" alt="CG图片">
   </div>
 
   <footer>
-    &copy; 2025 路菲尔的回声 ｜ ARG谜题设计 by Kurusu Akira
+    ARG谜题设计 by 粉色啪叽熊
   </footer>
 
   <script>
-    function showCG() {
-      document.getElementById('cgOverlay').classList.add('show');
+    // 统一图片弹出函数
+    function showOverlay(imgSrc) {
+      const overlay = document.getElementById('cgOverlay');
+      overlay.querySelector('img').src = imgSrc; // 修改图片路径
+      overlay.classList.add('show'); // 显示遮罩
     }
 
+    // 点击遮罩关闭图片
     function hideCG(event) {
       if (event.target.id === 'cgOverlay') {
         document.getElementById('cgOverlay').classList.remove('show');
